@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Custom New Tab",
+  "name": "new newww",
   "version": "1.0",
   "description": "Replaces the new tab with a custom page showing remaining days and Google search.",
   "chrome_url_overrides": {
@@ -8,5 +8,6 @@
   },
   "permissions": ["bookmarks", "tabs"],
   "action": {
+    "default_icon" : "/icons/newnewwwicon.png"
   }
 }

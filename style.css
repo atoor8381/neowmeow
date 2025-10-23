@@ -2,12 +2,24 @@
 body {
   background: #070d17ff;
   font-family: 'Segoe UI', sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 100vh;
+  width: 100vw;
   color: #ccc;
   margin: 0;
+}
+
+.top-gmail{
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.top-gmail a{
+  padding-right: 50px;
+  text-decoration: none;
+  font-size: 1rem;
+  color: #ccc;
 }
 
 .container {
