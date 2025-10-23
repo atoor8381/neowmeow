@@ -11,7 +11,20 @@ body {
 }
 
 .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 90px;
+  flex-direction: column;
+}
+
+.text{
   text-align: center;
+
+}
+
+.text h1{
+  font-size: 3rem;
 }
 
 #search-input {
@@ -21,24 +34,4 @@ body {
   border: 1px solid #ccc;
   border-radius: 8px;
   outline: none;
-}
-
-button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 14px;
-  border: none;
-  background: #4285f4;
-  color: white;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-button:hover {
-  background: #357ae8;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
 }
