@@ -1,12 +1,12 @@
 {
   "manifest_version": 3,
-  "name": "Days Left in Year",
+  "name": "Custom New Tab",
   "version": "1.0",
-  "description": "Shows the number of days remaining in the current year on each new tab.",
+  "description": "Replaces the new tab with a custom page showing remaining days and Google search.",
   "chrome_url_overrides": {
     "newtab": "newtab.html"
   },
-  "icons": {
-    "16": "./icon.png"
+  "permissions": ["bookmarks", "tabs"],
+  "action": {
   }
 }
