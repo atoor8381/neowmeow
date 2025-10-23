@@ -8,6 +8,6 @@
   },
   "permissions": ["bookmarks", "tabs"],
   "action": {
-    "default_icon" : "/icons/newnewwwicon.png"
+    "default_icon" : "meow.png"
   }
 }
