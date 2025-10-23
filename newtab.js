@@ -19,17 +19,6 @@ const toggleBtn = document.getElementById('toggle-bookmarks');
 const section = document.getElementById('bookmark-section');
 const list = document.getElementById('bookmarks-list');
 
-toggleBtn.addEventListener('click', async () => {
-  if (section.style.display === 'none') {
-    section.style.display = 'block';
-    list.innerHTML = ''; // Clear previous
-    const bookmarks = await chrome.bookmarks.getTree();
-    displayBookmarks(bookmarks[0].children, list);
-  } else {
-    section.style.display = 'none';
-  }
-  
-});
 
 function displayBookmarks(nodes, parent) {
   nodes.forEach(node => {
