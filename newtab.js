@@ -30,6 +30,9 @@ form.addEventListener('submit', (e) => {
   e.preventDefault();
   const query = document.getElementById('search-input').value.trim();
   if (query) {
+    if(query.toLowerCase()==='twitter' || 'instagram'){
+      return 
+    }
     window.location.href = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
   }
 });
