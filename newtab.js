@@ -25,8 +25,8 @@ updateCountdown();
 setInterval(updateCountdown, 1000);
 
 // --- Google Search Redirect ---
-const form = document.getElementById('search-form');
-form.addEventListener('submit', (e) => {
+const searchform = document.getElementById('search-form');
+searchform.addEventListener('submit', (e) => {
   e.preventDefault();
   const query = document.getElementById('search-input').value.trim();
   if (query) {
@@ -34,6 +34,21 @@ form.addEventListener('submit', (e) => {
   }
 });
 
+
+let shortcutform = document.querySelector('.card-form')
+
+let shortcuts = []
+
+function addshortcut(){
+
+}
+
+shortcutform.addEventListener('submit',(e)=>{
+  e.preventDefault()
+  let enteredlink = document.getElementById('link').value
+  let enteredname = document.getElementById('name-shortcut').value
+  // addshortcut()
+})
 
 let addnew = document.querySelector('.plusbutton')
 let card = document.querySelector('.card')
