@@ -3,7 +3,6 @@ body {
   background: #070d17ff;
   font-family: 'Segoe UI', sans-serif;
   height: 100vh;
-  width: 100vw;
   color: #ccc;
   margin: 0;
 }
@@ -26,7 +25,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 90px;
+  gap: 70px;
+  position: relative;
   flex-direction: column;
 }
 
@@ -46,4 +46,43 @@ body {
   border: 1px solid #ccc;
   border-radius: 8px;
   outline: none;
+}
+
+
+.addshortcut{
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.plusbutton{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.plusbutton button{
+  font-size: 1rem;
+  background: transparent;
+  color: aliceblue;
+  border: none;
+}
+
+.card{
+  display: none;
+  width: 300px;
+  height: 300px;
+  background-color: blue;
+  color: white;
+}
+
+.card.active{
+  position: absolute;
+  display: flex !important;
+  justify-content: center ;
+  align-items: center;
+  top: 0%;
+  
 }
