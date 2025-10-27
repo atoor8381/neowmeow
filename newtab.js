@@ -56,6 +56,7 @@ chrome.storage.local.get(['shortcutsarray'], function(result) {
 
     chrome.storage.local.set({ shortcutsarray: shortcuts }, function() {
       console.log('Shortcut saved:', shortcutdetailsobj);
+    submitbutton.disabled=false
     });
   }
 
@@ -67,12 +68,13 @@ chrome.storage.local.get(['shortcutsarray'], function(result) {
     for (const element of shortcuts) {
       if (element.name === enteredname) {
         alreadyexists = true;
+    submitbutton.disabled=true
       }
     }
     if(!alreadyexists){
     addshortcut(enteredlink, enteredname);
-    submitbutton.disabled=true
     console.log("here is the bug");
+    submitbutton.disabled=true
     }
     else{
       console.log("already exists")
@@ -86,7 +88,7 @@ chrome.storage.local.get(['shortcutsarray'], function(result) {
 });
 
 
-
+console.log(shortcuts)
 
 //user can create buttons of their own choice 
 //pop up complete 
