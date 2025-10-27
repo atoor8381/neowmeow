@@ -39,10 +39,12 @@ let shortcutform = document.querySelector('.card-form')
 let fromlocalstorage = localStorage.getItem('shortcutsarray')
 let addnew = document.querySelector('.plusbutton')
 let card = document.querySelector('.card')
+let shortcuts;
+let submitbutton = document.getElementById('submit-button-form-addshortcut')
 
 
 chrome.storage.local.get(['shortcutsarray'], function(result) {
-  let shortcuts = result.shortcutsarray || [];
+  shortcuts = result.shortcutsarray || [];
 
   function addshortcut(link, name) {
     let shortcutdetailsobj = {
@@ -61,8 +63,20 @@ chrome.storage.local.get(['shortcutsarray'], function(result) {
     e.preventDefault();
     let enteredlink = document.getElementById('link').value;
     let enteredname = document.getElementById('name-shortcut').value;
+    let alreadyexists=false;
+    for (const element of shortcuts) {
+      if (element.name === enteredname) {
+        alreadyexists = true;
+      }
+    }
+    if(!alreadyexists){
     addshortcut(enteredlink, enteredname);
+    submitbutton.disabled=true
     console.log("here is the bug");
+    }
+    else{
+      console.log("already exists")
+    }
   });
 
   addnew.addEventListener('click', () => {
@@ -70,6 +84,8 @@ chrome.storage.local.get(['shortcutsarray'], function(result) {
     console.log("meow");
   });
 });
+
+
 
 
 //user can create buttons of their own choice 
