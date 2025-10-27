@@ -18,7 +18,7 @@ body {
   padding-right: 50px;
   text-decoration: none;
   font-size: 1rem;
-  color: #ccc;
+  color: green;
 }
 
 .container {
@@ -45,6 +45,8 @@ body {
   width: 300px;
   border: 1px solid #ccc;
   border-radius: 8px;
+  background-color: green;
+  color: yellow;
   outline: none;
 }
 

@@ -37,17 +37,31 @@ searchform.addEventListener('submit', (e) => {
 
 let shortcutform = document.querySelector('.card-form')
 
-let shortcuts = []
+let fromlocalstorage = localStorage.getItem('shortcutsarray')
 
-function addshortcut(){
+let shortcuts = JSON.parse(fromlocalstorage) 
 
+function addshortcut(link, name){
+  let shortcutdetailsobj = {
+    link : link,
+    name : name,
+  }
+
+  shortcuts.push(shortcutdetailsobj)
+
+  localStorage.setItem('shortcutsarray',JSON.stringify(shortcuts))
+
+  
 }
+
+
 
 shortcutform.addEventListener('submit',(e)=>{
   e.preventDefault()
   let enteredlink = document.getElementById('link').value
   let enteredname = document.getElementById('name-shortcut').value
-  // addshortcut()
+  addshortcut(enteredlink, enteredname)
+  console.log("here is the bug")
 })
 
 let addnew = document.querySelector('.plusbutton')
