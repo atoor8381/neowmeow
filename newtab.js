@@ -36,42 +36,42 @@ searchform.addEventListener('submit', (e) => {
 
 
 let shortcutform = document.querySelector('.card-form')
-
 let fromlocalstorage = localStorage.getItem('shortcutsarray')
-
-let shortcuts = JSON.parse(fromlocalstorage) 
-
-function addshortcut(link, name){
-  let shortcutdetailsobj = {
-    link : link,
-    name : name,
-  }
-
-  shortcuts.push(shortcutdetailsobj)
-
-  localStorage.setItem('shortcutsarray',JSON.stringify(shortcuts))
-
-  
-}
-
-
-
-shortcutform.addEventListener('submit',(e)=>{
-  e.preventDefault()
-  let enteredlink = document.getElementById('link').value
-  let enteredname = document.getElementById('name-shortcut').value
-  addshortcut(enteredlink, enteredname)
-  console.log("here is the bug")
-})
-
 let addnew = document.querySelector('.plusbutton')
 let card = document.querySelector('.card')
 
-addnew.addEventListener('click',()=>{
-  card.classList.toggle('active')
-  console.log("meow")
-})
+
+chrome.storage.local.get(['shortcutsarray'], function(result) {
+  let shortcuts = result.shortcutsarray || [];
+
+  function addshortcut(link, name) {
+    let shortcutdetailsobj = {
+      link: link,
+      name: name,
+    };
+
+    shortcuts.push(shortcutdetailsobj);
+
+    chrome.storage.local.set({ shortcutsarray: shortcuts }, function() {
+      console.log('Shortcut saved:', shortcutdetailsobj);
+    });
+  }
+
+  shortcutform.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let enteredlink = document.getElementById('link').value;
+    let enteredname = document.getElementById('name-shortcut').value;
+    addshortcut(enteredlink, enteredname);
+    console.log("here is the bug");
+  });
+
+  addnew.addEventListener('click', () => {
+    card.classList.toggle('active');
+    console.log("meow");
+  });
+});
 
 
 //user can create buttons of their own choice 
 //pop up complete 
+//use chrome storage for the extensions instead of local storage becuase it can be synced accross devices and some other features too
