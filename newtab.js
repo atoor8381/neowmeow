@@ -41,6 +41,7 @@ let addnew = document.querySelector('.plusbutton')
 let card = document.querySelector('.card')
 let shortcuts;
 let submitbutton = document.getElementById('submit-button-form-addshortcut')
+let addedshortcuts = document.getElementById('savedshortcuts')
 
 
 chrome.storage.local.get(['shortcutsarray'], function(result) {
@@ -79,7 +80,22 @@ chrome.storage.local.get(['shortcutsarray'], function(result) {
     else{
       console.log("already exists")
     }
-  });
+  })
+
+  console.log(shortcuts)
+
+  let keytobedisplayed;
+
+  for (let i = 0; i < shortcuts.length; i++) {
+    const shortcut = shortcuts[i];
+    let atagforshortcut = document.createElement('a')
+    console.log(shortcut)
+    atagforshortcut.setAttribute('href',shortcut.link)
+    atagforshortcut.innerText=shortcut.name
+    addedshortcuts.appendChild(atagforshortcut)
+    keytobedisplayed = shortcut.name[0];
+    console.log(keytobedisplayed)
+  }
 
   addnew.addEventListener('click', () => {
     card.classList.toggle('active');
