@@ -2,54 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>newnewww</title>
+  <title>Year Progress</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="shortcut icon" href="meow.png" type="image/x-icon">
 </head>
 <body>
-  <div class="top-gmail">
-    <a href="https://mail.google.com/">Gmail</a>
-  </div>
   <div class="container">
-    <div class="text">
-    <h1 id="record"></h1>
-    <p>Remaining this year</p>
+
+    <div id="grid" class="grid"></div>
+
+    <div class="remaining">
+      <span id="remaining-time"></span>
+    </div>
   </div>
 
-    <div class="searchandshortcut">
-    <form id="search-form">
-      <input id="search-input" type="text" placeholder="Search Google..." autofocus />
-    </form>
-    <div class="addshortcut">
-      <div class="plusbutton">
-        <button>
-          +
-        </button>
-        <p>Add fav</p>
-      </div>
-    </div>
-    </div>
-
-    <div class="shortcuts" id="savedshortcuts">
-    </div>
-
-    
-    <div class="card">
-      <form action="" class="card-form">
-        <label for="link">URL:</label>
-        <input type="url" placeholder="https://www.meowmeowmeow.com" id="link" required>
-        <label for="name-shortcut">Name:</label>
-        <input type="text" name="" placeholder="meow" id="name-shortcut" required>
-        <button type="submit" id="submit-button-form-addshortcut">
-          ADD
-        </button>
-      </form>
-    </div>
-
-    </div>
-
-    
-  <script src="newtab.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

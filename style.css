@@ -1,144 +1,45 @@
-
-body {
-  background: black;
-  font-family: 'Segoe UI', sans-serif;
-  height: 100vh;
-  color: #ccc;
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.top-gmail{
-  display: flex;
-  align-items: center;
-  justify-content: end;
-  padding-right: 50px;
-  padding-top: 4px;
-}
-
-.top-gmail a{
-  text-decoration: none;
-  font-size: 1rem;
-  color: white;
-  font: bolder;
-  font-style: italic;
+html, body {
+  height: 100%;
+  overflow: hidden;
+  font-family: system-ui, sans-serif;
+  background: #0d1117;
+  color: #c9d1d9;
 }
 
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 70px;
-  position: relative;
-  flex-direction: column;
-}
-
-.text{
-  text-align: center;
-
-}
-
-.text h1{
-  font-size: 3rem;
-}
-
-#search-input {
-  padding: 10px 15px;
-  font-size: 18px;
-  width: 300px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  background-color: rgb(96, 96, 217);
-  color: black;
-  font-weight: bolder;
-  outline: none;
-}
-
-.searchandshortcut{
-  display: flex;
-  flex-direction: row;
-  gap: 30px;
-}
-
-
-.addshortcut{
-  width: 70%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-}
-
-
-
-.plusbutton{
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 1rem;
-  padding: 3px;
+  gap: 24px;
 }
 
-.plusbutton:hover{
-  cursor: pointer;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(53, 1fr); /* 7x53 ≈ 365 */
+  grid-template-rows: repeat(7, 1fr);
+  gap: 4px;
+  width: min(90vw, 900px);
+  height: min(50vh, 300px);
 }
 
-.plusbutton button:hover{
-  cursor: pointer;
+.day {
+  background: #161b22;
+  border-radius: 3px;
 }
 
-
-.shortcuts{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5%;
-  width: 60%;
+.day.completed {
+  background: #2ea043; /* GitHub green */
 }
 
-.shortcuts a{
-  text-decoration: none;
-  color: #ccc;
-}
-
-
-.plusbutton button{
-  font-size: 1rem;
-  background: transparent;
-  color: aliceblue;
-  border: none;
-}
-
-.card{
-  display: none;
-  width: 300px;
-  height: 300px;
-  background-color: blue;
-  color: white;
-}
-
-.card.active{
-  position: absolute;
-  display: flex !important;
-  justify-content: center ;
-  align-items: center;
-  flex-direction: column;
-  top: 0%;
-}
-
-.card-form{
-  background-color: black;
-  width: 60%;
-  height: 90%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 10px;
-  align-items: center;
-  color: #ffde00;
-}
-
-.card-form button{
-  background: transparent;
-  color: #ffde00;
-  border: none;
+.remaining {
+  font-size: 20px;
+  font-weight: 500;
 }
