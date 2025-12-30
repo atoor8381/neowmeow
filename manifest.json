@@ -6,7 +6,7 @@
   "chrome_url_overrides": {
     "newtab": "newtab.html"
   },
-  "permissions": ["bookmarks", "tabs","storage"],
+  "permissions": ["bookmarks", "tabs"],
   "action": {
     "default_icon" : "meow.png"
   }
